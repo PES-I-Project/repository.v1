@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="C:\Users\bielj\Desktop\Projeto_PES_vite\public\logo_G3.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\logo_G3.ico" type="image/x-icon">
   <link rel="stylesheet" href="home.css">
   <title>G3 Multimarcas</title>
 
   <script src="src/home.ts"></script>
     <script>
         function redirecionar() {
-            window.location.href = "C:/Users/bielj/Desktop/Projeto_PES_vite/dist/home.html";
+            window.location.href = "file:///C:/Users/bielj/Desktop/Projeto_PES_vite/src/home.html";
         }
     </script>
 
@@ -50,7 +50,7 @@
     
     <header> 
       <button class="btn_home" onclick="redirecionar()">
-          <img src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\logo_G3.png" alt="imagem do botao">
+          <img src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\logo_G3.png" alt="imagem do botao">
       </button>
       <div>
           <input type="search" name="Pesquisar" id="search" placeholder="Pesquisar veículo">
@@ -63,7 +63,7 @@
 
         <div id="left" class="visivelLateral">
           <div>
-              <h1>Filtros: </h1><br>
+              <h1>Filtros:</h1><br>
               
               <div id="Marcas">
                   <h2>Marcas</h2>
@@ -92,40 +92,35 @@
               <div id="Ano">
                   <h2>Ano</h2>
                   <input type="number" class="number" min="1950" max="2024" step="1" placeholder="De">
-                  <input type="number" class="number" min="1950" max="2024" step="1" placeholder="Até">
+                  <input type="number" class="number" min="1950" max="2024" step="1" placeholder="Até"><br>
               </div>
-
+              <br>
               <button class="button">Buscar</button>
           </div>
       </div>
 
       <div>
-        
-
         <div class="announcements">
           <button id="Alternar" onclick="toggleDiv()">Ocultar filtros</button>
-          <div class="announcement-vehicle">
+            
+            <div class="announcement-vehicle">
+                <h1>BMW M8</h1>
+                <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo">
+            </div>
+            <div class="announcement-vehicle">
               <h1>BMW M8</h1>
-              <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\car.jpg" alt="veiculo">
-          </div>
-
-          <div class="announcement-vehicle">
+              <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo">
+            </div>
+            <div class="announcement-vehicle">
               <h1>BMW M8</h1>
-              <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\car.jpg" alt="veiculo">
-          </div>
-
-          <div class="announcement-vehicle">
+              <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo">
+            </div>
+            <div class="announcement-vehicle">
               <h1>BMW M8</h1>
-              <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\car.jpg" alt="veiculo">
-          </div>
-
-          <div class="announcement-vehicle">
-              <h1>BMW M8</h1>
-              <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\car.jpg" alt="veiculo">
-          </div>
-          
-        </div>
+              <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo">
+            </div>  
       </div>
+    </div>
       
     </main>
     
