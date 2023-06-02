@@ -40,7 +40,7 @@ main{
     flex: 1 0 auto;
 }
 
-#left{
+#menu_lateral{
     position: flex;
     color: #ccc;
     font-family: Helvetica;
@@ -53,6 +53,15 @@ main{
     max-height: 100%;
     border: #ccc;
 } 
+
+.announcements{
+    display: table-cell;
+    margin: 0px;
+    padding: 100px;
+    align-items: center;
+    width: 1800px;
+    height: 1000px;
+}
 
 footer{
     position: static;
@@ -88,12 +97,11 @@ footer{
     transition-duration: 0.4s;
 }
 
-.btn img {
+.btn img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 
 img{
     height: 50px;
@@ -108,7 +116,7 @@ input[type="search"] {
     padding: 8px 12px; 
     width: 600px; 
     border: 1px solid #ccc;
-    border-radius: 4px; 
+    border-radius: 20px; 
 }
   
 /* Estilo do ícone de pesquisa */
@@ -123,14 +131,19 @@ input[type="search"]:focus {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
-/*Definindo area principal, filtros(barra lateral) e anuncios*/
-
-
-#Alternar{  
-    top: 0;
-
+input[type="search"]:hover {
+    box-shadow: #999 10px;
 }
 
+/*Definindo area principal, filtros(barra lateral) e anuncios*/
+
+#Alternar{  
+    
+}
+
+#Alternar:hover{
+
+}
 
 /*Formataçoes da funçao de exibição da barra lateral de filtros*/
 .ocultarLateral{
@@ -150,24 +163,14 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
-button{
-    font-family: Fjalla One;
-}
-
-/*Formataçoes anuncios*/
-.announcements{
-    display: table-cell;
-    margin: 0px;
-    padding: 100px;
-    align-items: center;
-    width: 100%;
-    height: 1000px;
-}
-
+/*Formataçao de anuncios*/
 .announcement-vehicle{
     padding: 40px;
     background-color: white;
     height: 500px;
+    width: 100%;
+    border: 2px solid DarkSlateGray;
+    border-radius: 10px;
 }
 
 .img-announcement{
