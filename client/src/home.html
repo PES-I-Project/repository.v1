@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\logo_G3.ico" type="image/x-icon">
+  <link rel="stylesheet" href="home.css">
+  <title>G3 Multimarcas</title>
+    
+    <script>
+        function redirecionar() {
+            window.location.href = "file:///C:/Users/bielj/Desktop/Projeto_PES_vite/src/home.html";
+        }
+    </script>
+
+    <script>
+        function toggleDiv() {
+          var div = document.getElementById("menu_lateral");
+            div.classList.toggle("ocultarLateral");
+            div.classList.toggle("visivelLateral");
+
+            var button = document.getElementById("Alternar");
+            
+            if (button.textContent === "Exibir filtros") {
+              button.textContent = "Ocultar filtros";
+            } else {
+              button.textContent = "Exibir filtros";
+            }   
+        }
+    </script>
+
+    <script>
+        window.onscroll = function() { mostrarProgresso(); };
+
+        function mostrarProgresso() {
+          var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+          var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+          var alturaJanela = document.documentElement.clientHeight || window.innerHeight;
+          var progresso = (scrollTop / (scrollHeight - alturaJanela)) * 100;
+          document.getElementById("progresso").style.width = progresso + "%";
+          document.getElementById("progresso").classList.add("mostrar");
+        }
+      </script>
+
+</head>
+
+<body>
+  <div class="container">
+    
+    <header> 
+      <button class="btn_home" onclick="redirecionar()">
+          <img src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\logo_G3.png" alt="imagem do botao">
+      </button>
+      <div>
+          <input type="search" name="Pesquisar" id="search" placeholder="Pesquisar veículo">
+          <div id="progresso"></div>
+      </div>
+      
+    </header>
+    
+    <main>
+      <div id="menu_lateral" class="visivelLateral">
+        <div>
+            <h1>Filtros:</h1><br>
+            
+            <div id="Marcas">
+                <h2>Marcas</h2>
+                <input type="checkbox" name="Kia">
+                <label for="Kia"> Kia</label><br>
+                <input type="checkbox" name="Renault">
+                <label for="Renault"> Renault</label><br>
+                <input type="checkbox" name="Volkswagen">
+                <label for="Renault"> Volkswagen</label><br>
+                <input type="checkbox" name="Chevrolet">
+                <label for="Renault"> Chevrolet</label><br>
+                <input type="checkbox" name="Hyundai">
+                <label for="Renault"> Hyundai</label><br>
+                <input type="checkbox" name="Toyota">
+                <label for="Renault"> Toyota</label><br>
+                <input type="checkbox" name="Fiat">
+                <label for="Fiat"> Fiat</label><br>
+                <input type="checkbox" name="Honda">
+                <label for="Renault"> Honda</label><br>
+            </div>
+
+            <div id="Modelo">
+                <h2>Modelo </h2>
+            </div>
+            
+            <div id="Ano">
+                <h2>Ano</h2>
+                <input type="number" class="number" min="1950" max="2024" step="1" placeholder="De">
+                <input type="number" class="number" min="1950" max="2024" step="1" placeholder="Até"><br>
+            </div>
+            <br>
+            <button class="button">Buscar</button>
+        </div>
+      </div>
+
+        <div>
+          <div class="announcements">
+            <button id="Alternar" onclick="toggleDiv()">Ocultar filtros
+                
+            </button>
+              
+              <div class="announcement-vehicle">
+                  <h1>BMW M8</h1>
+                  <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo">
+              </div>
+              <div class="announcement-vehicle">
+                <h1>BMW M8</h1>
+                <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo">
+              </div>
+              <div class="announcement-vehicle">
+                <h1>BMW M8</h1>
+                <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo">
+              </div>
+              <div class="announcement-vehicle">
+                <h1>BMW M8</h1>
+                <img class="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo">
+              </div>  
+        </div>
+      </div>
+    </main>
+      
+          
+      
+        <footer>
+          <p>Meu Footer</p>
+        </footer>
+
+  </div>
+</body>
+</html>

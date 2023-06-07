@@ -1,16 +1,26 @@
-import express, {Express} from "express";
+import express, {Express, response} from "express";
 import {router} from "./routes/router";
 const app: Express = express();
+import dotenv from "dotenv";
+import cors from "cors";
 
+
+dotenv.config();
+const port = process.env.PORT;
+
+
+app.use(cors());
 app.use(express.json());
 app.get('/users', (request, response) => {     return response.send('Hello World!');   });
 app.use('/api', router);
+app.get('/',(request, response) =>{
+    return response.send('HOME');
+} );
 
 
-console.log("Abriu!")
 
 
-app.listen(5555, () =>{
-    console.log("Server On")
+app.listen(port, () =>{
+    console.log("Server On  http://localhost:${port}")
 });
 
