@@ -30,6 +30,26 @@ export class controllerCatalogo {
         
     }
 
+    async addAnewDocument2(req: Request, res: Response){
+        const idCatalogo = ff.collection(firestore, 'Catalogo');
+        try{
+            const newDoc = await ff.addDoc(idCatalogo, {
+                ano: 2000,
+                descricao: "req.params.descricao",
+                imagem:  "req.params.imagem",
+                km: 1000,
+                marca: "req.params.marca",
+                modelo: "req.params.modelo",
+                preco: 2000
+            });
+            res.send(console.log("Deu certo!"))
+        }
+        catch(error){
+            res.send(console.log("Deu erro +", error));
+        }
+        
+    }
+
 
     // LENDO O DOCUMENTO
 

@@ -6,12 +6,13 @@ import "./criar.css"
 function App() {
     const navigate = useNavigate();
     const [blogpost, setBlogpost] = useState({
+        ano: '',
+        descricao: '',
+        imagem: '',
+        km: '',
         marca: '',
         modelo: '',
-        ano: '',
-        km: '',
-        fotos: '',
-        descricao: ''
+        preco: ''
     })
 
     const onChange = (e: { target: { name: any; value: any; }; }) => {
@@ -22,15 +23,16 @@ function App() {
         event.preventDefault()
 
         axios
-            .post('http://localhost:5555/api/novo-anuncio', blogpost)
+            .post('http://localhost:5555/novo-anuncio', blogpost)
             .then((res) => {
                 setBlogpost({
+                    ano: '',
+                    descricao: '',
+                    imagem: '',
+                    km: '',
                     marca: '',
                     modelo: '',
-                    ano: '',
-                    km: '',
-                    fotos: '',
-                    descricao: ''
+                    preco: ''
                 });
 
                 navigate('/');
@@ -47,9 +49,10 @@ function App() {
                 <input type="text" className="formItem" placeholder="Marca" name="marca" value={blogpost.marca} onChange={onChange} required={true} autoComplete="off" />
                 <input type="text" className="formItem" placeholder="Modelo" name="modelo" value={blogpost.modelo} onChange={onChange} required={true} autoComplete="off" />
                 <input type="text" className="formItem" placeholder="Ano" name="ano" value={blogpost.ano} onChange={onChange} required={true} autoComplete="off" />
+                <input type="text" className="formItem" placeholder="preco" name="preco" value={blogpost.preco} onChange={onChange} required={true} autoComplete="off" />
                 <input type="text" className="formItem" placeholder="km" name="km" value={blogpost.km} onChange={onChange} required={true} autoComplete="off" />
                 <br />
-                <input type="text" className="formItem" placeholder="Fotos" name="fotos" value={blogpost.fotos} onChange={onChange} required={true} autoComplete="off" />
+                <input type="text" className="formItem" placeholder="Fotos" name="imagem" value={blogpost.imagem} onChange={onChange} required={true} autoComplete="off" />
                 <br />
                 <textarea className="formItem" placeholder="Descrição" name="descricao" value={blogpost.descricao} onChange={onChange} required={true} autoComplete="off" />
                 <br />

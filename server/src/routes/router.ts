@@ -6,8 +6,8 @@ const router: Router = express.Router();
 
 router.post('/')
 router.get('/')
-router.get('/novo-post', catalogo.addAnewDocument)
-
+router.get('/novo-post', catalogo.addAnewDocument2)
+router.get('/novo-anuncio', catalogo.addAnewDocument)
 
 
 
