@@ -2,8 +2,8 @@ import {Request, Response} from "express";
 
 import {firestore} from "../firebase";
 
-import { addDoc, collection, doc, getDoc, limit, onSnapshot, orderBy, query, where} from 'firebase/firestore'
-
+//import { addDoc, collection, doc, getDoc, limit, onSnapshot, orderBy, query, where} from 'firebase/firestore'
+const ff = require('firebase/firestore');
 
 export class controllerCatalogo {
 
@@ -11,9 +11,9 @@ export class controllerCatalogo {
 
 
     async addAnewDocument(req: Request, res: Response){
-        const idCatalogo = collection(firestore, 'Catalogo');
+        const idCatalogo = ff.collection(firestore, 'Catalogo');
         try{
-            const newDoc = await addDoc(idCatalogo, {
+            const newDoc = await ff.addDoc(idCatalogo, {
                 ano: req.params.ano,
                 descricao: req.params.descricao,
                 imagem:  req.params.imagem,
@@ -34,8 +34,8 @@ export class controllerCatalogo {
     // LENDO O DOCUMENTO
 
     async  readASingleDocument(req: Request, res: Response){
-        const Catalogo = doc(firestore, 'Catalogo/${req.id}');
-        const mySnapshot = await getDoc(Catalogo)
+        const Catalogo = ff.doc(firestore, 'Catalogo/${req.id}');
+        const mySnapshot = await ff.getDoc(Catalogo)
         if (mySnapshot.exists()) {
             const docData = mySnapshot.data();
             console.log('Dados do documento ${JSON.stringify(docData)}');
@@ -45,8 +45,8 @@ export class controllerCatalogo {
     // VENDO O ESTADO ATUAL DO DOCUMENTO
 
     listenToADocument() {
-        const Catalogo = doc(firestore, 'Catalogo/2');
-        onSnapshot(Catalogo, docSnapshot => {
+        const Catalogo = ff.doc(firestore, 'Catalogo/2');
+        ff.onSnapshot(Catalogo, (docSnapshot : any) => {
             if (docSnapshot.exists()) {
                 const docData = docSnapshot.data();
                 console.log('Esse documento é ${JSON.stringify(docData)}');
@@ -57,16 +57,16 @@ export class controllerCatalogo {
     // LENDO VARIOS DOCUMENTOS DE UMA VEZ
 
     async queryForDocuments(req: Request, res: Response){
-        const variosAnuncios = query(
-            collection(firestore, 'Catalogo'),
-            where('modelo', '==', 'F8'),
-            orderBy('preco'),
-            limit(10),
+        const variosAnuncios = ff.query(
+            ff.collection(firestore, 'Catalogo'),
+            ff.where('modelo', '==', 'F8'),
+            ff.orderBy('preco'),
+            ff.limit(10),
         );
 
         
-        onSnapshot(variosAnuncios, (querySnapshot) =>{
-            querySnapshot.forEach((snap) =>{
+        ff.onSnapshot(variosAnuncios, (querySnapshot : any) =>{
+            querySnapshot.forEach((snap : any) =>{
                 console.log('Documento ${snap.id} contem ${JSON.stringify(snap.data())}');
             });
         });
@@ -84,9 +84,9 @@ export class controllerUsuarios {
 
 
     async addAnewDocument(req: Request, res: Response){
-        const idUsuario = collection(firestore, 'usuarios');
+        const idUsuario = ff.collection(firestore, 'usuarios');
         try{
-            const newDoc = await addDoc(idUsuario, {
+            const newDoc = await ff.addDoc(idUsuario, {
                 nome: req.params.nome,
                 sobrenome: req.params.sobrenome,
                 email: req.params.email
@@ -103,8 +103,8 @@ export class controllerUsuarios {
     // LENDO O DOCUMENTO
 
     async  readASingleDocument(){
-        const Catalogo = doc(firestore, 'Catalogo/2');
-        const mySnapshot = await getDoc(Catalogo)
+        const Catalogo = ff.doc(firestore, 'Catalogo/2');
+        const mySnapshot = await ff.getDoc(Catalogo)
         if (mySnapshot.exists()) {
             const docData = mySnapshot.data();
             console.log('Dados do documento ${JSON.stringify(docData)}');
@@ -114,8 +114,8 @@ export class controllerUsuarios {
     // VENDO O ESTADO ATUAL DO DOCUMENTO
 
     listenToADocument() {
-        const Catalogo = doc(firestore, 'Catalogo/2');
-        onSnapshot(Catalogo, docSnapshot => {
+        const Catalogo = ff.doc(firestore, 'Catalogo/2');
+        ff.onSnapshot(Catalogo, (docSnapshot : any) => {
             if (docSnapshot.exists()) {
                 const docData = docSnapshot.data();
                 console.log('Esse documento é ${JSON.stringify(docData)}');
@@ -126,16 +126,16 @@ export class controllerUsuarios {
     // LENDO VARIOS DOCUMENTOS DE UMA VEZ
 
     async queryForDocuments() {
-        const variosAnuncios = query(
-            collection(firestore, 'Catalogo'),
-            where('modelo', '==', 'F8'),
-            orderBy('preco'),
-            limit(10),
+        const variosAnuncios = ff.query(
+            ff.collection(firestore, 'Catalogo'),
+            ff.where('modelo', '==', 'F8'),
+            ff.orderBy('preco'),
+            ff.limit(10),
         );
 
         
-        onSnapshot(variosAnuncios, (querySnapshot) =>{
-        querySnapshot.forEach((snap) =>{
+        ff.onSnapshot(variosAnuncios, (querySnapshot : any) =>{
+        querySnapshot.forEach((snap : any) =>{
             console.log('Documento ${snap.id} contem ${JSON.stringify(snap.data())}');
         });
     });
