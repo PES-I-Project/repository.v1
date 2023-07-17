@@ -43,22 +43,46 @@ function App() {
     }
 
     return (
-        <div className="form">
-            <h1>Criar um novo post</h1>
-            <form onSubmit={criarPost}>
-                <input type="text" className="formItem" placeholder="Marca" name="marca" value={blogpost.marca} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="Modelo" name="modelo" value={blogpost.modelo} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="Ano" name="ano" value={blogpost.ano} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="preco" name="preco" value={blogpost.preco} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="km" name="km" value={blogpost.km} onChange={onChange} required={true} autoComplete="off" />
-                <br />
-                <input type="text" className="formItem" placeholder="Fotos" name="imagem" value={blogpost.imagem} onChange={onChange} required={true} autoComplete="off" />
-                <br />
-                <textarea className="formItem" placeholder="Descrição" name="descricao" value={blogpost.descricao} onChange={onChange} required={true} autoComplete="off" />
-                <br />
-                <input type="submit" value="Cadastrar anúncio" />
-            </form>
-        </div>
+
+        <body>
+            
+        
+        <header>
+            <button className="btn_home">
+                <img src=".../src/assets/image/logo_G3.png" alt="image"/>
+            </button>
+            <div>
+                <input type="search" name="Pesquisar" id="search" placeholder="Pesquisar veículo"/>
+            </div>
+        </header>
+
+        <main>
+
+                <form onSubmit={criarPost}>
+                    <div className="infos-init">
+                        <input type="text" className="iniciar" placeholder="Marca" name="marca" value={blogpost.marca} onChange={onChange} required={true} autoComplete="off" />
+                        <input type="text" className="iniciar" placeholder="Modelo" name="modelo" value={blogpost.modelo} onChange={onChange} required={true} autoComplete="off" />
+                        <input type="text" className="iniciar" placeholder="preço" name="preco" value={blogpost.preco} onChange={onChange} required={true} autoComplete="off" />
+                        <input type="text" className="iniciar" placeholder="Ano" name="ano" value={blogpost.ano} onChange={onChange} required={true} autoComplete="off" />
+                        <input type="text" className="iniciar" placeholder="km" name="km" value={blogpost.km} onChange={onChange} required={true} autoComplete="off" />
+                    </div>
+                    <br />
+                    <input type="file" className="formItem" placeholder="Fotos" name="fotos" value={blogpost.imagem} onChange={onChange} required={true} autoComplete="off" />
+                    <br />
+                    <br />
+                    <textarea className="desc" placeholder="Descrição" name="descricao" value={blogpost.descricao} onChange={onChange} required={true} autoComplete="off" />
+                    <br />
+                    <br />
+                    <div className="buton">
+                        <input type="submit" className="boton" value="Cadastrar anúncio"/>
+                    </div>
+                </form>
+        </main> 
+
+        <footer>
+            Aqui vai ficar o footer
+        </footer>
+        </body>
     )
 }
 
