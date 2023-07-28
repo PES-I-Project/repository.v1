@@ -9,6 +9,7 @@ import { addDoc, collection, doc, getDoc, limit, onSnapshot, orderBy, query, whe
 export class controllerCatalogo {
 
     // ESSE CRIA COM ID
+
     async addAnewDocument(req: Request, res: Response) {
         const idCatalogo = collection(firestore, 'Catalogo');
         try {

@@ -1,7 +1,7 @@
 //import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import * as firebase from 'firebase/app';
-import 'firebase/firestore'; 
+import 'firebase/firestore';
 //const db = firebase.firestore();
 //const ff = require('db')
 
@@ -16,4 +16,4 @@ const firebaseApp = firebase.initializeApp({
 
 const firestore = getFirestore();
 
-export{firestore}
+export { firestore }
