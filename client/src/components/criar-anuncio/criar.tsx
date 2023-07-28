@@ -48,9 +48,9 @@ function App() {
             <form onSubmit={criarPost}>
                 <input type="text" className="formItem" placeholder="Marca" name="marca" value={announcement.marca} onChange={onChange} required={true} autoComplete="off" />
                 <input type="text" className="formItem" placeholder="Modelo" name="modelo" value={announcement.modelo} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="Ano" name="ano" value={announcement.ano} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="preco" name="preco" value={announcement.preco} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="km" name="km" value={announcement.km} onChange={onChange} required={true} autoComplete="off" />
+                <input type="number" className="formItem" placeholder="Ano" name="ano" value={announcement.ano} onChange={onChange} required={true} autoComplete="off" />
+                <input type="number" className="formItem" placeholder="preco" name="preco" value={announcement.preco} onChange={onChange} required={true} autoComplete="off" />
+                <input type="number" className="formItem" placeholder="km" name="km" value={announcement.km} onChange={onChange} required={true} autoComplete="off" />
                 <br />
                 <input type="text" className="formItem" placeholder="Fotos" name="imagem" value={announcement.imagem} onChange={onChange} required={true} autoComplete="off" />
                 <br />

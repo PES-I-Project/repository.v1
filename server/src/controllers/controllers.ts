@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { firestore } from "../firebase";
+import { db } from "../firebase";
 import { addDoc, collection, doc, getDoc, limit, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 
 // const ff = require('firebase/firestore');
@@ -11,26 +11,30 @@ export class controllerCatalogo {
     // ESSE CRIA COM ID
 
     async addAnewDocument(req: Request, res: Response) {
-        const idCatalogo = collection(firestore, 'Catalogo');
+        const idCatalogo = collection(db, "Catalogo");
         try {
+            const ano = parseInt(req.body.ano)
+            const km = parseInt(req.body.km)
+            const preco = parseFloat(req.body.preco)
             const newDoc = await addDoc(idCatalogo, {
-                ano: req.params.ano,
-                descricao: req.params.descricao,
-                imagem: req.params.imagem,
-                km: req.params.km,
-                marca: req.params.marca,
-                modelo: req.params.modelo,
-                preco: req.params.preco
+                ano: ano,
+                descricao: req.body.descricao,
+                imagem: req.body.imagem,
+                km: km,
+                marca: req.body.marca,
+                modelo: req.body.modelo,
+                preco: preco
             });
             res.send(console.log("Deu certo!"))
         }
         catch (error) {
+            console.log(req.body)
             res.send(console.log("Deu erro +", error));
         }
     }
 
     async addAnewDocument2(req: Request, res: Response) {
-        const idCatalogo = collection(firestore, 'Catalogo');
+        const idCatalogo = collection(db, 'Catalogo');
         try {
             const newDoc = await addDoc(idCatalogo, {
                 ano: 2000,
@@ -52,7 +56,7 @@ export class controllerCatalogo {
 
     // LENDO O DOCUMENTO
     async readASingleDocument(req: Request, res: Response) {
-        const Catalogo = doc(firestore, 'Catalogo/${req.id}');
+        const Catalogo = doc(db, 'Catalogo/${req.id}');
         const mySnapshot = await getDoc(Catalogo)
         if (mySnapshot.exists()) {
             const docData = mySnapshot.data();
@@ -62,7 +66,7 @@ export class controllerCatalogo {
 
     // VENDO O ESTADO ATUAL DO DOCUMENTO
     listenToADocument() {
-        const Catalogo = doc(firestore, 'Catalogo/2');
+        const Catalogo = doc(db, 'Catalogo/2');
         onSnapshot(Catalogo, (docSnapshot: any) => {
             if (docSnapshot.exists()) {
                 const docData = docSnapshot.data();
@@ -74,7 +78,7 @@ export class controllerCatalogo {
     // LENDO VARIOS DOCUMENTOS DE UMA VEZ
     async queryForDocuments(req: Request, res: Response) {
         const variosAnuncios = query(
-            collection(firestore, 'Catalogo'),
+            collection(db, 'Catalogo'),
             where('modelo', '==', 'F8'),
             orderBy('preco'),
             limit(10),
@@ -95,7 +99,7 @@ export class controllerUsuarios {
 
     // ESSE CRIA COM ID
     async addAnewDocument(req: Request, res: Response) {
-        const idUsuario = collection(firestore, 'usuarios');
+        const idUsuario = collection(db, 'usuarios');
         try {
             const newDoc = await addDoc(idUsuario, {
                 nome: req.params.nome,
@@ -112,7 +116,7 @@ export class controllerUsuarios {
 
     // LENDO O DOCUMENTO
     async readASingleDocument() {
-        const Catalogo = doc(firestore, 'Catalogo/2');
+        const Catalogo = doc(db, 'Catalogo/2');
         const mySnapshot = await getDoc(Catalogo)
         if (mySnapshot.exists()) {
             const docData = mySnapshot.data();
@@ -122,7 +126,7 @@ export class controllerUsuarios {
 
     // VENDO O ESTADO ATUAL DO DOCUMENTO
     listenToADocument() {
-        const Catalogo = doc(firestore, 'Catalogo/2');
+        const Catalogo = doc(db, 'Catalogo/2');
         onSnapshot(Catalogo, (docSnapshot: any) => {
             if (docSnapshot.exists()) {
                 const docData = docSnapshot.data();
@@ -134,7 +138,7 @@ export class controllerUsuarios {
     // LENDO VARIOS DOCUMENTOS DE UMA VEZ
     async queryForDocuments() {
         const variosAnuncios = query(
-            collection(firestore, 'Catalogo'),
+            collection(db, 'Catalogo'),
             where('modelo', '==', 'F8'),
             orderBy('preco'),
             limit(10),
