@@ -5,7 +5,7 @@ import "./criar.css"
 
 function App() {
     const navigate = useNavigate();
-    const [blogpost, setBlogpost] = useState({
+    const [announcement, setAnnouncement] = useState({
         ano: '',
         descricao: '',
         imagem: '',
@@ -16,16 +16,16 @@ function App() {
     })
 
     const onChange = (e: { target: { name: any; value: any; }; }) => {
-        setBlogpost({ ...blogpost, [e.target.name]: e.target.value })
+        setAnnouncement({ ...announcement, [e.target.name]: e.target.value })
     }
 
     async function criarPost(event: React.FormEvent) {
         event.preventDefault()
 
         axios
-            .post('http://localhost:5555/novo-anuncio', blogpost)
+            .post('http://localhost:5555/api/novo-anuncio', announcement)
             .then((res) => {
-                setBlogpost({
+                setAnnouncement({
                     ano: '',
                     descricao: '',
                     imagem: '',
@@ -38,23 +38,48 @@ function App() {
                 navigate('/');
             })
             .catch((err: Error) => {
-                console.log("Fudeu Familia");
+                console.log(Error);
             });
+
+        // catch(error => {
+        //     if (!error.response) {
+        //         // network error
+        //         this.errorStatus = 'Error: Network Error';
+        //     } else {
+        //         this.errorStatus = error.response.data.message;
+        //     }
+        //   })
+
+
+        // axios.interceptors.response.use(
+        //     response => {
+        //         return response
+        //     },
+        //     error => {
+        //         if (!error.response) {
+        //             console.log("Please check your internet connection.");
+        //         }
+
+        //         return Promise.reject(error)
+        //     }
+        // )
+
+
     }
 
     return (
         <div className="form">
             <h1>Criar um novo post</h1>
             <form onSubmit={criarPost}>
-                <input type="text" className="formItem" placeholder="Marca" name="marca" value={blogpost.marca} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="Modelo" name="modelo" value={blogpost.modelo} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="Ano" name="ano" value={blogpost.ano} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="preco" name="preco" value={blogpost.preco} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="km" name="km" value={blogpost.km} onChange={onChange} required={true} autoComplete="off" />
+                <input type="text" className="formItem" placeholder="Marca" name="marca" value={announcement.marca} onChange={onChange} required={true} autoComplete="off" />
+                <input type="text" className="formItem" placeholder="Modelo" name="modelo" value={announcement.modelo} onChange={onChange} required={true} autoComplete="off" />
+                <input type="text" className="formItem" placeholder="Ano" name="ano" value={announcement.ano} onChange={onChange} required={true} autoComplete="off" />
+                <input type="text" className="formItem" placeholder="preco" name="preco" value={announcement.preco} onChange={onChange} required={true} autoComplete="off" />
+                <input type="text" className="formItem" placeholder="km" name="km" value={announcement.km} onChange={onChange} required={true} autoComplete="off" />
                 <br />
-                <input type="text" className="formItem" placeholder="Fotos" name="imagem" value={blogpost.imagem} onChange={onChange} required={true} autoComplete="off" />
+                <input type="text" className="formItem" placeholder="Fotos" name="imagem" value={announcement.imagem} onChange={onChange} required={true} autoComplete="off" />
                 <br />
-                <textarea className="formItem" placeholder="Descrição" name="descricao" value={blogpost.descricao} onChange={onChange} required={true} autoComplete="off" />
+                <textarea className="formItem" placeholder="Descrição" name="descricao" value={announcement.descricao} onChange={onChange} required={true} autoComplete="off" />
                 <br />
                 <input type="submit" value="Cadastrar anúncio" />
             </form>

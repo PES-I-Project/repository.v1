@@ -9,8 +9,4 @@ router.get('/')
 router.get('/novo-post', catalogo.addAnewDocument2)
 router.get('/novo-anuncio', catalogo.addAnewDocument)
 
-
-
-
-
 export { router }
