@@ -14,6 +14,5 @@ app.use(express.json());
 app.use('/api', router)
 
 app.listen(port, () => {
-    console.log("Server On  http://localhost:${port}")
+    console.log(`Server On http://localhost:${port}`)
 });
-

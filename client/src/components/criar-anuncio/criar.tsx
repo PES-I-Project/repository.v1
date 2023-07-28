@@ -40,31 +40,6 @@ function App() {
             .catch((err: Error) => {
                 console.log(Error);
             });
-
-        // catch(error => {
-        //     if (!error.response) {
-        //         // network error
-        //         this.errorStatus = 'Error: Network Error';
-        //     } else {
-        //         this.errorStatus = error.response.data.message;
-        //     }
-        //   })
-
-
-        // axios.interceptors.response.use(
-        //     response => {
-        //         return response
-        //     },
-        //     error => {
-        //         if (!error.response) {
-        //             console.log("Please check your internet connection.");
-        //         }
-
-        //         return Promise.reject(error)
-        //     }
-        // )
-
-
     }
 
     return (
