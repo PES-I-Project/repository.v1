@@ -4,7 +4,7 @@ function App() {
     return (
         <>
             <div className="center">
-                <Criar />
+                <Home />
             </div>
         </>
     )

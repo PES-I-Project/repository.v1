@@ -1,15 +1,16 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import Example from './pages/example';
 import NovoPost from './pages/create-announcement';
-import HomePage from './pages/HomePage';
-import './App.css'
+import  Home   from './pages/HomePage';
+//import './App.css'
+
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          {<Route path='/' element={<HomePage />} />}
+          <Route path='/home' element={<Home />} /> 
           <Route path='/novo-post' element={<NovoPost />} />
           {/* <Route path='/:id' element={<BlogPost />} /> */}
           {/* <Route path='/:id/editar' element={<EditarPost />} /> */}

@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./criar.css"
+import React from 'react';
+
 
 function App() {
     const navigate = useNavigate();
@@ -40,6 +42,8 @@ function App() {
             .catch((err: Error) => {
                 console.log(Error);
             });
+
+        
     }
 
     return (
@@ -67,7 +71,7 @@ function App() {
                         <input type="number" className="iniciar" placeholder="km" name="km" value={announcement.km} onChange={onChange} required={true} autoComplete="off" />
                     </div>
                     <br />
-                    <input type="text" className="formItem" placeholder="Fotos" name="fotos" value={announcement.imagem} onChange={onChange} required={true} autoComplete="off" />
+                    <input type="file" className="formItem" placeholder="Fotos" name="fotos" value={announcement.imagem} onChange={onChange} required={true} autoComplete="off" />
                     <br />
                     <br />
                     <textarea className="desc" placeholder="Descrição" name="descricao" value={announcement.descricao} onChange={onChange} required={true} autoComplete="off" />

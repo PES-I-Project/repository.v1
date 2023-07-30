@@ -13,7 +13,7 @@ body{
     margin: 0 auto;
 }
 
-/*Formataçoes do header*/
+
 header{
     position: fixed;
     top: 0;
@@ -69,7 +69,6 @@ footer{
     display: flex;
 }
 
-/*formatacoes da barra de progresso ao usar o scroll na pagina*/
 #progresso {
     position: absolute;
     bottom: 0;
@@ -81,7 +80,6 @@ footer{
     z-index: 9999;
 }
 
-/*formataçoes botao home*/
 .btn_home{
     display: inline-block;
     padding-left: 20px;
@@ -107,7 +105,6 @@ img{
     padding: none;
 }
 
-/*formataçao input de pesquisa*/
 input[type="search"] {
     font-family: Helvetica;
     margin-left: 250px; 
@@ -133,17 +130,13 @@ input[type="search"]:hover {
     box-shadow: #999 10px;
 }
 
-/*Definindo area principal, filtros(barra lateral) e anuncios*/
 
-#Alternar{  
-    
-}
 
-#Alternar:hover{
+/*#Alternar:hover{
 
 }
+*/
 
-/*Formataçoes da funçao de exibição da barra lateral de filtros*/
 .ocultarLateral{
     display: none;
 }
@@ -165,7 +158,6 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
-/*Formataçao de anuncios*/
 .announcement-vehicle{
     padding: 40px;
     background-color: white;
@@ -186,5 +178,14 @@ input[type="checkbox"]{
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
 }
 
+.cadastrar{
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Adjust this value to position the button at the desired distance from the right edge */
+    transform: translateY(-50%);
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    text-size-adjust: 10px;
 
-
+}
