@@ -5,7 +5,7 @@ import "./criar.css"
 
 function App() {
     const navigate = useNavigate();
-    const [announcement, setAnnouncement] = useState({
+    const [blogpost, setBlogpost] = useState({
         ano: '',
         descricao: '',
         imagem: '',
@@ -16,16 +16,16 @@ function App() {
     })
 
     const onChange = (e: { target: { name: any; value: any; }; }) => {
-        setAnnouncement({ ...announcement, [e.target.name]: e.target.value })
+        setBlogpost({ ...blogpost, [e.target.name]: e.target.value })
     }
 
     async function criarPost(event: React.FormEvent) {
         event.preventDefault()
 
         axios
-            .post('http://localhost:5555/api/novo-anuncio', announcement)
+            .post('http://localhost:5555/novo-anuncio', blogpost)
             .then((res) => {
-                setAnnouncement({
+                setBlogpost({
                     ano: '',
                     descricao: '',
                     imagem: '',
@@ -38,27 +38,51 @@ function App() {
                 navigate('/');
             })
             .catch((err: Error) => {
-                console.log(Error);
+                console.log("Fudeu Familia");
             });
     }
 
     return (
-        <div className="form">
-            <h1>Criar um novo post</h1>
-            <form onSubmit={criarPost}>
-                <input type="text" className="formItem" placeholder="Marca" name="marca" value={announcement.marca} onChange={onChange} required={true} autoComplete="off" />
-                <input type="text" className="formItem" placeholder="Modelo" name="modelo" value={announcement.modelo} onChange={onChange} required={true} autoComplete="off" />
-                <input type="number" className="formItem" placeholder="Ano" name="ano" value={announcement.ano} onChange={onChange} required={true} autoComplete="off" />
-                <input type="number" className="formItem" placeholder="preco" name="preco" value={announcement.preco} onChange={onChange} required={true} autoComplete="off" />
-                <input type="number" className="formItem" placeholder="km" name="km" value={announcement.km} onChange={onChange} required={true} autoComplete="off" />
-                <br />
-                <input type="text" className="formItem" placeholder="Fotos" name="imagem" value={announcement.imagem} onChange={onChange} required={true} autoComplete="off" />
-                <br />
-                <textarea className="formItem" placeholder="Descrição" name="descricao" value={announcement.descricao} onChange={onChange} required={true} autoComplete="off" />
-                <br />
-                <input type="submit" value="Cadastrar anúncio" />
-            </form>
-        </div>
+
+        <body>
+            
+        
+        <header>
+            <button className="btn_home">
+                <img src="src/assets/logo_G3.png" alt="image"/>
+            </button>
+            <div>
+                <input type="search" name="Pesquisar" id="search" placeholder="Pesquisar veículo"/>
+            </div>
+        </header>
+
+        <main>
+
+                <form onSubmit={criarPost}>
+                    <div className="infos-init">
+                        <input type="text" className="iniciar" placeholder="Marca" name="marca" value={blogpost.marca} onChange={onChange} required={true} autoComplete="off" />
+                        <input type="text" className="iniciar" placeholder="Modelo" name="modelo" value={blogpost.modelo} onChange={onChange} required={true} autoComplete="off" />
+                        <input type="text" className="iniciar" placeholder="preço" name="preco" value={blogpost.preco} onChange={onChange} required={true} autoComplete="off" />
+                        <input type="text" className="iniciar" placeholder="Ano" name="ano" value={blogpost.ano} onChange={onChange} required={true} autoComplete="off" />
+                        <input type="text" className="iniciar" placeholder="km" name="km" value={blogpost.km} onChange={onChange} required={true} autoComplete="off" />
+                    </div>
+                    <br />
+                    <input type="file" className="formItem" placeholder="Fotos" name="fotos" value={blogpost.imagem} onChange={onChange} required={true} autoComplete="off" />
+                    <br />
+                    <br />
+                    <textarea className="desc" placeholder="Descrição" name="descricao" value={blogpost.descricao} onChange={onChange} required={true} autoComplete="off" />
+                    <br />
+                    <br />
+                    <div className="buton">
+                        <input type="submit" className="boton" value="Cadastrar anúncio"/>
+                    </div>
+                </form>
+        </main> 
+
+        <footer>
+            Aqui vai ficar o footer
+        </footer>
+        </body>
     )
 }
 

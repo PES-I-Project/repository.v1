@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    flex-direction: column;
+    background-color: darkslategray;
+}
+
+/*Formataçoes do header*/
+header{
+    position: sticky;
+    top: 0;
+    padding: 0;
+    height: 10%;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(40, 40, 40);
+    display: flex;
+    box-shadow: 0 0 10px;
+}
+
+/*formataçoes botao home*/
+.btn_home{
+    display: inline-block;
+    padding-left: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.btn_home:hover{
+    opacity: 60%;
+    transition-duration: 0.4s;
+}
+
+.btn img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+img{
+    height: 50px;
+    width: 50px;
+    padding: none;
+}
+
+/*formataçao input de pesquisa*/
+input[type="search"] {
+    font-family: Helvetica;
+    margin-left: 250px; 
+    padding: 8px 12px; 
+    width: 600px; 
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+}
+  
+/* Estilo do ícone de pesquisa */
+input[type="search"]::placeholder {
+    color: #999; 
+    opacity: 0.8; 
+}
+  
+/* Estilo quando o input search está em foco */
+input[type="search"]:focus {
+    outline: none; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+input[type="search"]:hover {
+    box-shadow: #999 10px;
+}
+
+
+div.form{
+    height: 50%;
+    width: 75%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%) translateY(150%);
+}
+
+div.buton{
+    left: 50%;
+    position: absolute;
+    transform: translateX(-75%)
+}
+
+.boton{
+    border-radius: 5px;
+    background-color: rgb(207, 207, 207);
+    color: black;
+}
+
+.boton:hover{
+    background-color: rgb(140, 138, 138);
+    box-shadow: rgb(112, 112, 112);
+}
+
+div.info-init{
+    flex-direction: column;
+}
+
+.iniciar{
+    height: 30px;
+    width: 18%;
+    border-radius: 5px;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.desc{
+    text-align: left;
+    height: 150px;
+    width: 98%;
+    border-radius: 8px;
+    margin: 1%;
+}
+
+main{
+    min-height: 75vh;
+    height: 100%;
+    width: 85%;
+    background-color: whitesmoke;
+    flex-direction: column;
+    display: flexbox;
+    margin: 50px;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.formItem{
+    margin-left: 1%;
+}
