@@ -79,9 +79,6 @@ export class controllerCatalogo {
     async queryForDocuments(req: Request, res: Response) {
         const variosAnuncios = query(
             collection(db, 'Catalogo'),
-            where('modelo', '==', 'F8'),
-            orderBy('preco'),
-            limit(10),
         );
 
 
@@ -97,10 +94,10 @@ export class controllerCatalogo {
         try {
             // Get the ID of the document to be deleted from the request body
             const docIdToDelete = req.params.id;
-    
+
             // If the document ID is not provided in the request, respond with an error
             if (!docIdToDelete) {
-            return res.status(400).send('Document ID not provided.');
+                return res.status(400).send('Document ID not provided.');
             }
     
             // Reference to the document to be deleted

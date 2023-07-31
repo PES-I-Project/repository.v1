@@ -8,7 +8,7 @@ const router: Router = express.Router();
 // router.get('/novo-post', catalogo.addAnewDocument2)
 router.post('/')
 router.get('/')
-// router.get('/:id', catalogo.listenToADocument)
+router.get('/:id', catalogo.listenToADocument)
 router.delete('/:id', catalogo.deleteNewDocument)
 router.post('/novo-anuncio', catalogo.addAnewDocument)
 router.put('/:id')
