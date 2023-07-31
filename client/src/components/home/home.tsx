@@ -26,7 +26,7 @@ const Home = () =>{
                     
                 </header>
                     
-                    <main>
+                    <main className="main-home">
                     <div id="menu_lateral" className="visivelLateral">
                             <div className="filtros">
                                 <h1>Filtros:</h1>
@@ -81,6 +81,7 @@ const Home = () =>{
                                 <div className="announcement-vehicle">
                                     <h1>BMW M8</h1>
                                     <img className="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo"/>
+                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}>EDIT</button>
                                 </div>
                                 <div className="announcement-vehicle">
                                     <h1>BMW M8</h1>

@@ -26,7 +26,7 @@ header{
     box-shadow: 0 0 10px;
 }
 
-main{
+.main-home{
     height: 70%;
     width: 100%;
     background-color:DarkSlateGray;
@@ -38,6 +38,16 @@ main{
     text-decoration: none;
     left: 0;
     flex: 1 0 auto;
+}
+
+.editar-anuncio{
+    top: 50%;
+    right: 20px; /* Adjust this value to position the button at the desired distance from the right edge */
+    transform: translateY(-50%);
+    height: 40px;
+    width: 50px;
+    text-align: center;
+    text-size-adjust: 10px;
 }
 
 #menu_lateral{
