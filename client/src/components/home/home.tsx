@@ -4,6 +4,8 @@
 import "./home.css";
 //import React from 'react';
 import "./home.ts";
+import toggleDiv from './toggleDiv';
+
 import { BsFillTrash3Fill, BsFillExplicitFill } from 'react-icons/bs';
 
 //import Criar from "../criar-anuncio/criar.tsx"
@@ -17,7 +19,7 @@ const Home = () =>{
                 <div className="container">
                     
                 <header> 
-                        <button className="btn_home">
+                        <button className="btn_home" onClick={() => window.open('http://localhost:5173/', "_self")}>
                             <img src="src/assets/logo_G3.png" alt="imagem do botao"/>
                         </button>
                         <div>
@@ -31,7 +33,7 @@ const Home = () =>{
                     <main className="main-home">
                     <div id="menu_lateral" className="visivelLateral">
                             <div className="filtros">
-                                <h1>Filtros:</h1>
+                                <h1>Filtros</h1>
                                 <div id="Marcas">
                                     <h2>Marcas</h2>
                                     <input type="checkbox" name="Kia"/>
@@ -61,13 +63,15 @@ const Home = () =>{
                                 </div>
 
                                 <div id="Modelo">
-                                    <h2>Modelo </h2>
+                                    <h2>Quilometragem</h2>
+                                    <input type="number" id="km" placeholder="KM"/>
                                 </div>
                                 
                                 <div id="Ano">
                                     <h2>Ano</h2>
-                                    <input type="number" className="number" min="1950" max="2024" step="1" placeholder="De"/>
-                                    <input type="number" className="number" min="1950" max="2024" step="1" placeholder="Até"/><br/>
+                                    <input type="number" className="number-home" min="1950" max="2024" step="1" placeholder="De"/>
+                                    <input type="number" className="number-home" min="1950" max="2024" step="1" placeholder="Até"/>
+                                    <br/>
                                 </div>
                                 <br/>
                                 <button className="button">Buscar</button>
@@ -76,31 +80,21 @@ const Home = () =>{
 
                             <div>
                             <div className="announcements">
-                                <button id="Alternar">Ocultar filtros
-                                    
-                                </button>
+                                <button id="Alternar" onClick={toggleDiv} >Ocultar filtros</button>
                                 
                                 <div className="announcement-vehicle">
-                                    <h1>BMW M8</h1>
-                                    <img className="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo"/>
                                     <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
                                     <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
                                 </div>
                                 <div className="announcement-vehicle">
-                                    <h1>BMW M8</h1>
-                                    <img className="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo"/>
                                     <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
                                     <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
                                 </div>
                                 <div className="announcement-vehicle">
-                                    <h1>BMW M8</h1>
-                                    <img className="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo"/>
                                     <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
                                     <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
                                 </div>
                                 <div className="announcement-vehicle">
-                                    <h1>BMW M8</h1>
-                                    <img className="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo"/>
                                     <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
                                     <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
                                 </div>  
