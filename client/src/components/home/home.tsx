@@ -1,35 +1,30 @@
 //import axios from "axios";
 //import { useState, useEffect } from "react";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./home.css";
-import React, { useEffect } from 'react';
-import mostrarProgresso from './mostrarProgresso';
 import toggleDiv from './toggleDiv';
 
 import { BsFillTrash3Fill, BsFillExplicitFill } from 'react-icons/bs';
 
 //import Criar from "../criar-anuncio/criar.tsx"
-
+const navigate=useNavigate()
 
 const Home = () =>{    
-    const SeuComponente: React.FC = () => {
-        useEffect(() => {
-          mostrarProgresso(); // Chama a função mostrarProgresso quando o componente é montado
-        }, []);
+    
     return (
 
         <body>
                 <div className="container">
                     
                 <header> 
-                        <button className="btn_home" onClick={() => window.open('http://localhost:5173/', "_self")}>
+                        <button className="btn_home" onClick={() => navigate('/')}>
                             <img src="src/assets/logo_G3.png" alt="imagem do botao"/>
                         </button>
                         <div>
                             <input type="search" name="Pesquisar" id="search" placeholder="Pesquisar veículo"/>
                             <div id="progresso"></div>
                         </div>
-                        <button className="cadastrar" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}>Novo anúncio</button>
+                        <button className="cadastrar" onClick={() => navigate('/novo-post')}>Novo anúncio</button>
                     
                 </header>
                     
@@ -86,20 +81,24 @@ const Home = () =>{
                                 <button id="Alternar" onClick={toggleDiv} >Ocultar filtros</button>
                                 
                                 <div className="announcement-vehicle">
-                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
-                                    <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
+                                    <img  className="img_car" src="src/assets/car.jpg" alt="" />
+                                    <button className="editar-anuncio" onClick={() => navigate('/novo-post')}><BsFillExplicitFill/></button>
+                                    <button className="excluir-anuncio" onClick={() => navigate('/novo-post')}><BsFillTrash3Fill/></button>
                                 </div>
                                 <div className="announcement-vehicle">
-                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
-                                    <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
+                                <img  className="img_car" src="src/assets/car.jpg" alt="" />
+                                    <button className="editar-anuncio" onClick={() => navigate('/novo-post')}><BsFillExplicitFill/></button>
+                                    <button className="excluir-anuncio" onClick={() => navigate('/novo-post')}><BsFillTrash3Fill/></button>
                                 </div>
                                 <div className="announcement-vehicle">
-                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
-                                    <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
+                                <img  className="img_car" src="src/assets/car.jpg" alt="" />
+                                    <button className="editar-anuncio" onClick={() => navigate('/novo-post')}><BsFillExplicitFill/></button>
+                                    <button className="excluir-anuncio" onClick={() => navigate('/novo-post')}><BsFillTrash3Fill/></button>
                                 </div>
                                 <div className="announcement-vehicle">
-                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
-                                    <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
+                                <img  className="img_car" src="src/assets/car.jpg" alt="" />
+                                    <button className="editar-anuncio" onClick={() => navigate('/novo-post')}><BsFillExplicitFill/></button>
+                                    <button className="excluir-anuncio" onClick={() => navigate('/novo-post')}><BsFillTrash3Fill/></button>
                                 </div>  
                             </div>
                         </div>

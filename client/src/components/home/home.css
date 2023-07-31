@@ -42,25 +42,24 @@ header{
 }
 
 .editar-anuncio{
-    top: 50%;
-    right: 20px; /* Adjust this value to position the button at the desired distance from the right edge */
-    transform: translateX(950%) translateY(-400%);
+    position: absolute;
+    top: 0;
+    right: 0; 
     height: 40px;
     width: 50px;
-    text-align: center;
-    text-size-adjust: 10px;
 }
 
 .excluir-anuncio{
-    top: 50%;
-    right: 20px; /* Adjust this value to position the button at the desired distance from the right edge */
-    transform: translateX(700%) translateY(-400%);
+    position: absolute;
+    margin-top: 0;
+    right: 0; 
     height: 40px;
     width: 50px;
-    text-align: center;
-    text-size-adjust: 10px;
 }
-
+.img_car{
+    width: 40%;
+    height: 100%;
+}
 #menu_lateral{
     color: #ccc;
     font-family: Helvetica;
@@ -180,13 +179,13 @@ input[type="checkbox"]{
 }
 
 .announcement-vehicle{
+    position : relative;
     padding: 40px;
-    background-color: white;
+    background-color: #fff;
     height: 250px;
     width: 90%;
     border: 3px solid DarkSlateGray;
     border-radius: 10px;
-    text-align: center;
 }
 
 .img-announcement{
@@ -208,4 +207,5 @@ input[type="checkbox"]{
     width: 150px;
     text-align: center;
     text-size-adjust: 10px;
+
 }
