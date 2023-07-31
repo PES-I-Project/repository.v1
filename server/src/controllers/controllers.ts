@@ -96,7 +96,7 @@ export class controllerCatalogo {
     async  deleteNewDocument(req: Request, res: Response) {
         try {
             // Get the ID of the document to be deleted from the request body
-            const docIdToDelete = req.params.docId;
+            const docIdToDelete = req.params.id;
     
             // If the document ID is not provided in the request, respond with an error
             if (!docIdToDelete) {
@@ -107,7 +107,7 @@ export class controllerCatalogo {
             const docRefToDelete = doc(db, 'Catalogo', docIdToDelete);
     
             // Delete the document
-            await deleteDoc(docRefToDelete);
+            deleteDoc(docRefToDelete);
     
             // Respond with a success message
             res.send('Document deleted successfully.');
@@ -115,9 +115,9 @@ export class controllerCatalogo {
             console.error('Error deleting document:', error);
             res.status(500).send('Error deleting document.');
         }
-        }
-    
     }
+
+}
 
 
 
