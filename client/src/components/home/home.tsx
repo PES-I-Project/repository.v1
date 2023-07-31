@@ -2,8 +2,8 @@
 //import { useState, useEffect } from "react";
 //import { useNavigate } from "react-router-dom";
 import "./home.css";
-//import React from 'react';
-import "./home.ts";
+import React, { useEffect } from 'react';
+import mostrarProgresso from './mostrarProgresso';
 import toggleDiv from './toggleDiv';
 
 import { BsFillTrash3Fill, BsFillExplicitFill } from 'react-icons/bs';
@@ -12,7 +12,10 @@ import { BsFillTrash3Fill, BsFillExplicitFill } from 'react-icons/bs';
 
 
 const Home = () =>{    
-
+    const SeuComponente: React.FC = () => {
+        useEffect(() => {
+          mostrarProgresso(); // Chama a função mostrarProgresso quando o componente é montado
+        }, []);
     return (
 
         <body>

@@ -10,4 +10,5 @@ const mostrarProgresso = () => {
     progressoElement.classList.add("mostrar");
   }
 };
- 
+
+export default mostrarProgresso;
