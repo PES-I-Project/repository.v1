@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
 import { db } from "../firebase";
-import { addDoc, collection, doc, getDoc, limit, onSnapshot, orderBy, query, where } from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, limit, onSnapshot, orderBy, query, where, deleteDoc } from 'firebase/firestore'
 
 // const ff = require('firebase/firestore');
 //const db = getFirestore();
@@ -92,7 +92,35 @@ export class controllerCatalogo {
         });
         res.json(variosAnuncios);
     }
-}
+
+    async  deleteNewDocument(req: Request, res: Response) {
+        try {
+            // Get the ID of the document to be deleted from the request body
+            const docIdToDelete = req.params.docId;
+    
+            // If the document ID is not provided in the request, respond with an error
+            if (!docIdToDelete) {
+            return res.status(400).send('Document ID not provided.');
+            }
+    
+            // Reference to the document to be deleted
+            const docRefToDelete = doc(db, 'Catalogo', docIdToDelete);
+    
+            // Delete the document
+            await deleteDoc(docRefToDelete);
+    
+            // Respond with a success message
+            res.send('Document deleted successfully.');
+        } catch (error) {
+            console.error('Error deleting document:', error);
+            res.status(500).send('Error deleting document.');
+        }
+        }
+    
+    }
+
+
+
 
 
 export class controllerUsuarios {

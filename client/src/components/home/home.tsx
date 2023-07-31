@@ -4,6 +4,8 @@
 import "./home.css";
 //import React from 'react';
 import "./home.ts";
+import { BsFillTrash3Fill, BsFillExplicitFill } from 'react-icons/bs';
+
 //import Criar from "../criar-anuncio/criar.tsx"
 
 
@@ -81,19 +83,26 @@ const Home = () =>{
                                 <div className="announcement-vehicle">
                                     <h1>BMW M8</h1>
                                     <img className="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo"/>
-                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}>EDIT</button>
+                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
+                                    <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
                                 </div>
                                 <div className="announcement-vehicle">
                                     <h1>BMW M8</h1>
                                     <img className="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo"/>
+                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
+                                    <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
                                 </div>
                                 <div className="announcement-vehicle">
                                     <h1>BMW M8</h1>
                                     <img className="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo"/>
+                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
+                                    <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
                                 </div>
                                 <div className="announcement-vehicle">
                                     <h1>BMW M8</h1>
                                     <img className="img-announcement" src="C:\Users\bielj\Desktop\Projeto_PES_vite\public\img\car.jpg" alt="veiculo"/>
+                                    <button className="editar-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillExplicitFill/></button>
+                                    <button className="excluir-anuncio" onClick={() => window.open('http://localhost:5173/novo-post', "_self")}><BsFillTrash3Fill/></button>
                                 </div>  
                             </div>
                         </div>

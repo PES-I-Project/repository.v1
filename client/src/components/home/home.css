@@ -43,7 +43,17 @@ header{
 .editar-anuncio{
     top: 50%;
     right: 20px; /* Adjust this value to position the button at the desired distance from the right edge */
-    transform: translateY(-50%);
+    transform: translateX(950%) translateY(-400%);
+    height: 40px;
+    width: 50px;
+    text-align: center;
+    text-size-adjust: 10px;
+}
+
+.excluir-anuncio{
+    top: 50%;
+    right: 20px; /* Adjust this value to position the button at the desired distance from the right edge */
+    transform: translateX(700%) translateY(-400%);
     height: 40px;
     width: 50px;
     text-align: center;
