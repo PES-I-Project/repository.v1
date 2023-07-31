@@ -52,7 +52,7 @@ function App() {
             
         
         <header id="h-criar">
-            <button className="btn_home">
+            <button className="btn_home" onClick={() => window.open('http://localhost:5173/', "_self")}>
                 <img src="src/assets/logo_G3.png" alt="image"/>
             </button>
             <div>

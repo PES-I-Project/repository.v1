@@ -15,7 +15,8 @@ body{
 
 
 header{
-    position: fixed;
+    z-index: 10;
+    position: sticky;
     top: 0;
     padding: 0;
     height: 8%;
@@ -125,6 +126,13 @@ img{
     padding: none;
 }
 
+.number-home{
+    width: 30%;
+}
+#km{
+    width: 50%;
+}
+
 input[type="search"] {
     font-family: Helvetica;
     margin-left: 250px; 
@@ -150,13 +158,6 @@ input[type="search"]:hover {
     box-shadow: #999 10px;
 }
 
-
-
-/*#Alternar:hover{
-
-}
-*/
-
 .ocultarLateral{
     display: none;
 }
@@ -181,9 +182,9 @@ input[type="checkbox"]{
 .announcement-vehicle{
     padding: 40px;
     background-color: white;
-    height: 500px;
-    width: 100%;
-    border: 2px solid DarkSlateGray;
+    height: 250px;
+    width: 90%;
+    border: 3px solid DarkSlateGray;
     border-radius: 10px;
     text-align: center;
 }
@@ -207,5 +208,4 @@ input[type="checkbox"]{
     width: 150px;
     text-align: center;
     text-size-adjust: 10px;
-
 }
